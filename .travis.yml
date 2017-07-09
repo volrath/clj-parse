@@ -7,12 +7,14 @@ env:
 
 matrix:
   allow_failures:
-    - env: VERSION=25.2.2 EMACS=emacs PACKAGE=emacs25 CLJ_PARSE_LINT=true
+    - env: VERSION=25.2.2 EMACS=emacs-25.2 PACKAGE=emacs25 CLJ_PARSE_LINT=true
 
 before_install:
   - sudo add-apt-repository -y ppa:kelleyk/emacs
   - sudo apt-get update -qq
   - sudo apt-get install -qq $PACKAGE
+  - mkdir /tmp/site-lisp -p
+  - git clone https://github.com/plexus/a.el.git /tmp/a.el
 
 script:
   - $EMACS --version
