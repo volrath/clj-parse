@@ -17,6 +17,9 @@
 (package-install 'package-lint)
 (package-install 'dash)
 
+;; temporary a.el setup
+(add-to-list 'load-path "/tmp/a.el/")
+
 (let ((files '("clj-parse.el" "clj-lex.el" "clj-parse-test.el" "clj-lex-test.el"))
       (pwd (replace-regexp-in-string "\n\\'" "" (shell-command-to-string "pwd"))))
 
