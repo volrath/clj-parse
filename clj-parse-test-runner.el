@@ -16,6 +16,7 @@
 
 (package-install 'package-lint)
 (package-install 'dash)
+(package-install 's)
 
 ;; temporary a.el setup
 (add-to-list 'load-path "/tmp/a.el/")
